@@ -8,4 +8,4 @@ Ya que aún no sé en que consistirá mi proyecto de DAI no puedo proporcionar l
 ##Inscripción en el certamen de Proyectos Libres de la UGR 2015-2016##
 Aquí adjunto la imagen de la inscripción realizada correctamente en el Certamen:
 
-(http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/InscripcionUGR_zpsgkjszv6h.png)
+![Inscripción](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/InscripcionUGR_zpsgkjszv6h.png)
