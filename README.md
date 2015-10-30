@@ -11,3 +11,6 @@ Ya que aún no sé en que consistirá mi proyecto de DAI no puedo proporcionar l
 Aquí adjunto la imagen de la inscripción realizada correctamente en el Certamen:
 
 ![Inscripción](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/InscripcionUGR_zpsgkjszv6h.png)
+
+
+## Segundo Hito
