@@ -73,7 +73,7 @@ def mostrarPerfilUsuario(username):
 		ini_html = 0
 		parser = ComprobarEtiquetas()
 		parser.feed(pag_alu)
-		assert (ini_html == 1 and fin_html == 1 and tipo_h1 == 2) 
+		assert ini_html == 1 
 		return pag_alu
 	if username in ['pepe']:
 		global hay_css
