@@ -11,7 +11,7 @@ python:
 # Instalar bibliotecas y modulos necesarios
 install:  
   - sudo apt-get install python-dev
-  - sudo easy_install Flask
+  - pip install flask
   
 # Ejecucion tests (integracción continua)
 script:
