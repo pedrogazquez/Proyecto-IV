@@ -7,8 +7,6 @@ install:
   - sudo easy_install Flask
   - sudo apt-get install python-dev
   - sudo pip install --upgrade pip
-  - pip install -r requirements.txt
-
 # comando para ejecutar los test:
 script: 
   - python test.py
