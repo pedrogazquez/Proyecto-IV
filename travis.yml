@@ -1,0 +1,13 @@
+language: python
+python:
+  - "2.7"
+# comando para instalar las dependencias:
+install:
+  - sudo apt-get install python-setuptools
+  - sudo easy_install Flask
+  - sudo apt-get install python-dev
+  - sudo pip install --upgrade pip
+
+# comando para ejecutar los test:
+script: 
+  - python test.py
