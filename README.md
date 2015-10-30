@@ -1,5 +1,7 @@
 ## Proyecto Infraestructura Virtual##
 Pedro Gázquez Navarrete, repositorio creado para la realización del proyecto de Infraestructura Virtual el cual realizaré junto al de la asignatura DAI.
+
+##Primer Hito
 ##Descripción##
 El proyecto ha realizar en esta asignatura será la de hacer la Infraestructura Virtual para el proyecto que voy a realizar en DAI ya que también tengo cursada esa asignatura. Este proyecto de DAI se realizará en el lenguaje de programación Python.
 ##Explicación##
