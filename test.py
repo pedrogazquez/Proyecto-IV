@@ -1,4 +1,5 @@
 import unittest
+import flask
 from ej3 import mostrarPerfilUsuario
 from HTMLParser import HTMLParser
 
