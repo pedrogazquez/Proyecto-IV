@@ -14,4 +14,16 @@ Aquí adjunto la imagen de la inscripción realizada correctamente en el Certame
 
 
 ## Segundo Hito
-![mm](https://travis-ci.org/pedrogazquez/Proyecto-IV.svg?branch=master)
+[Aquí el enlace a mi proyecto](https://github.com/pedrogazquez/Proyecto-IV)
+![travis](https://travis-ci.org/pedrogazquez/Proyecto-IV.svg?branch=master) ![shippable]
+
+Para realizar los tests de mi proyecto he usado la libreria de unittest de python. Son tests flexibles y muy usados en este lenguaje. Los tests que he realizado los he integrado dentro de las herramientas de construcción, incluyendo un objetivo make test en [mi makefile](https://github.com/pedrogazquez/Proyecto-IV/blob/master/makefile). Para configurar el sistema de integración continua de forma que lance los tests automáticamente he usado Travis-CI y Shippable.
+
+#Shippable
+He creado mi archivo [shippable.yml](https://github.com/pedrogazquez/Proyecto-IV/blob/master/shippable.yml) una vez registrado en la página de Shippable y autorizado para que realicen los tests automáticamente. Como se puede ver en la siguiente imagen se realiza todo correctamente.
+![shippable](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/ship_zpskdghgjx4.png)
+
+
+#Travis
+Como he hecho con el anterior he creado mi archivo [travis.yml](https://github.com/pedrogazquez/Proyecto-IV/blob/master/.travis.yml), igual que antes registrado con github previamente. Una vez hecho estó como se puede ver en la siguiente imagen el resultado de los tests es positivo:
+![travis](http://s1042.photobucket.com/user/Pedro_Gazquez_Navarrete/media/trav_zpshehbyrb0.png.html)
