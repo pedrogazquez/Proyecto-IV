@@ -14,8 +14,10 @@ Aquí adjunto la imagen de la inscripción realizada correctamente en el Certame
 
 
 ## Segundo Hito
-[Aquí el enlace a mi proyecto](https://github.com/pedrogazquez/Proyecto-IV)
+
 ![travis](https://travis-ci.org/pedrogazquez/Proyecto-IV.svg?branch=master)
+
+[Aquí el enlace a mi proyecto](https://github.com/pedrogazquez/Proyecto-IV)
 
 Para realizar los tests de mi proyecto he usado la libreria de unittest de python. Son tests flexibles y muy usados en este lenguaje. Los tests que he realizado los he integrado dentro de las herramientas de construcción, incluyendo un objetivo make test en [mi makefile](https://github.com/pedrogazquez/Proyecto-IV/blob/master/makefile). Para configurar el sistema de integración continua de forma que lance los tests automáticamente he usado Travis-CI y Shippable.
 
