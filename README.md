@@ -15,7 +15,7 @@ Aquí adjunto la imagen de la inscripción realizada correctamente en el Certame
 
 ## Segundo Hito
 
-![travis](https://travis-ci.org/pedrogazquez/Proyecto-IV.svg?branch=master)
+[![Build Status](https://travis-ci.org/pedrogazquez/Proyecto-IV.svg?branch=master)](https://travis-ci.org/pedrogazquez/Proyecto-IV)
 
 [Aquí el enlace a mi proyecto](https://github.com/pedrogazquez/Proyecto-IV)
 
