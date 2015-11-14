@@ -1,102 +1,68 @@
-from flask import Flask, session, redirect, url_for, escape, request
+from wtforms import *
+from flask import Flask, session, redirect, url_for, escape, request, render_template
 import sys, pydoc
 from HTMLParser import HTMLParser
+
+reload(sys)
+sys.setdefaultencoding('utf-8')
 app = Flask(__name__)
-""" Aplicacion con flask creada para la redireccion web segun la ruta escogida"""
-pag_alu= '''
-			<html>
-				<head>
-					<title>PAGINA DE ALUMNO</title>
-				</head>
-
-				<body>
-					<h1>ALUMNO, hola PEDRO </h1>
-					<img src="/static/pedro.jpg" height="42" width="42">
-				</body>
-			</html>
-			'''
-pag_profe= '''
-			<html>
-				<head>
-					<title>PAGINA DE PROFESOR</title>
-					<link href="/static/estilos.css" rel="stylesheet" type="text/css" />
-				</head>
-				<body>
-					<h1>PROFESOR, hola PEPE </h1>
-				</body>
-			</html>
-		'''
-pag_usu= '''
-			<html>
-				<head>
-					<title>PAGINA DE USUARIO SIN REGISTRAR</title>
-				</head>
-				<body>
-					<h1>USUARIO SIN REGISTRAR, hola usuario anonimo </h1>
-				</body>
-			</html>
-		'''
-
-ini_html = 0
-fin_html = 0
-tipo_h1 = 0
-hay_css = 0
+#Expresion regular para que el numero de VISA sea corecto
+regVISA='(\d\d\d\d)[ \-](\d\d\d\d)[ \-](\d\d\d\d)[ \-](\d\d\d\d)$'
+listUsers = []
+listSurna = []
 
 class ComprobarEtiquetas(HTMLParser):
 	def handle_starttag(self, tag, attrs):
 		global ini_html
-		global tipo_h1
 		global hay_css
+		global hay_form
 		if tag=='html':
 			ini_html = 1
-		if tag=='h1':
-			tipo_h1 += 1
 		for attr in attrs:
-			if (attr[0] == 'href' and attr[1] == '/static/estilos.css'):
+			if (attr[0] == 'href' and attr[1] == '/static/style.css'):
 				hay_css = 1
+		for attr in attrs:
+			if (attr[0] == 'method' and attr[1] == 'post'):
+				hay_form = 1
 	def handle_endtag(self, tag):
 		global fin_html
-		global tipo_h1
 		if tag=='html':
 			fin_html = 1
-		if tag=='h1':
-			tipo_h1 += 1
 
-@app.route('/user/<username>')
-def mostrarPerfilUsuario(username):
-    # Mostrar el perfil de usuario
-	""" Esta funcion es la que depende del nombre de usuario especificado en la ruta, redirige a una pagina creada dependiendo si eres alumno, profesor o usuario sin registrar."""
-	
-	
-	if username in ['pedro']:
-		global ini_html
-		ini_html = 0
-		parser = ComprobarEtiquetas()
-		parser.feed(pag_alu)
-		assert ini_html == 1 
-		return pag_alu
-	if username in ['pepe']:
-		global hay_css
-		hay_css = 0
-		parser = ComprobarEtiquetas()
-		parser.feed(pag_profe)
-		assert hay_css == 1
-		return pag_profe
-	else:
-		return pag_usu
+class RegistrationForm(Form):
+	username = TextField('Nombre: ', [validators.Length(min=4, max=25)])
+	userap = TextField('Apellidos: ', [validators.Length(min=4, max=50)])
+	email = TextField('Correo electronico', [validators.Length(min=6, max=35),validators.Required(),validators.Email(message='El email es incorrecto')])
+	visaNum = TextField('Numero de VISA', [validators.Length(min=6, max=35),validators.Required(),validators.Regexp(regVISA, flags=0, message='Numero de VISA incorrecto')])
+	nacimiento = DateField('Fecha de nacimiento: ', format='%Y-%m-%d')
+	direccion = TextField('Direccion: ', [validators.Length(min=6, max=60)])
+	password = PasswordField('Contrasenia', [validators.Required(),validators.EqualTo('confirm', message='La contrasenia debe coincidir con la repeticion')])
+	confirm = PasswordField('Repite la contrasenia')
+	accept_tos = BooleanField('Acepto las condiciones', [validators.Required()])
+	formaPago = SelectField(u'Forma de pago', choices=[('contra', 'Contra reembolso'), ('visa', 'Tarjeta VISA')])
 
-@app.errorhandler(404)
-def page_not_found(error):
-    return '''
-			<html>
-				<head>
-				<title>ERROR 404</title>
-			</head>
-			<body>
-			<h1>ERROR INTRODUZCA UN NOMBRE DE USUARIO EN LA URL </h1>
-			</body>
-			</html>
-		'''
-		
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+	form = RegistrationForm(request.form)
+	if request.method == 'POST' and form.validate():
+		return('Gracias %s por registrarte!' % form.username.data)
+	return render_template('register.html', form=form)
+
+@app.route('/users')
+def showUsers():
+	return 'Esta es la lista de usuarios registrados: ' + ',\n'.join(map(str,listUsers))
+
+@app.route('/add/<username>')
+def	addUser(username):
+	listUsers.append(username)
+	return 'Usuario registrado. Pruebe /users para ver los usuarios'
+
+@app.route('/')
+def index():
+	form = RegistrationForm(request.form)
+	return render_template('index.html', form=form)
+	
 if __name__ == '__main__':
     app.run(host='0.0.0.0',debug=True)  # 0.0.0.0 para permitir conexiones desde cualquier sitio. Ojo, peligroso en modo debug
+
+	
