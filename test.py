@@ -1,46 +1,58 @@
 import unittest
-from flask import Flask
-from ej3 import mostrarPerfilUsuario
+from formu import register
 from HTMLParser import HTMLParser
 
 ini_html = 0
 fin_html = 0
-tipo_h1 = 0
 hay_css = 0
+hay_form = 0
+html_css = ""
 class ComprobarEtiquetas(HTMLParser):
 	def handle_starttag(self, tag, attrs):
 		global ini_html
-		global tipo_h1
 		global hay_css
+		global hay_form
 		if tag=='html':
 			ini_html = 1
-		if tag=='h1':
-			tipo_h1 += 1
 		for attr in attrs:
-			if (attr[0] == 'href' and attr[1] == '/static/estilos.css'):
+			if (attr[0] == 'href' and attr[1] == '/static/style.css'):
 				hay_css = 1
+		for attr in attrs:
+			if (attr[0] == 'method' and attr[1] == 'post'):
+				hay_form = 1
 	def handle_endtag(self, tag):
 		global fin_html
-		global tipo_h1
 		if tag=='html':
 			fin_html = 1
-		if tag=='h1':
-			tipo_h1 += 1
+
 class TestStringMethods(unittest.TestCase):
-
-  def test_comprobarHTML(self):
-		global ini_html
-		ini_html = 1
+	
+	def test_comprobarformu(self):
+		global hay_form
+		hay_form = 0
 		parser = ComprobarEtiquetas()
-		mostrarPerfilUsuario('pedro')
-		self.assertEqual(ini_html,1)
+		html_registro=register()
+		parser.feed(html_registro)
+		self.assertEqual(hay_form,1)
 
-  def test_comprobarCSS(self):
+
+	# def test_comprobarHTML(self):
+		# global ini_html
+		# ini_html = 1
+		# parser = ComprobarEtiquetas()
+		# html_index = index()
+		# parser.feed(html_index)
+		# self.assertEqual(ini_html,1)
+
+	def test_comprobarCSS(self):
 		global hay_css
+		global html_css
 		hay_css = 1
 		parser = ComprobarEtiquetas()
-		mostrarPerfilUsuario('pepe')
-		self.assertEqual(hay_css,1)
+		html_css=register()
+		parser.feed(html_css)
+		self.assertEqual(hay_form,1)
+
 
 if __name__ == '__main__':
     unittest.main()
