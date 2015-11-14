@@ -1,1 +1,2 @@
-web: gunicorn formu:formu
+web: gunicorn appIV.wsgi --log-file -
+
