@@ -1,1 +1,1 @@
-web: python formu.py
+web: gunicorn formu:formu
