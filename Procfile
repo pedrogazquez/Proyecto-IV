@@ -1,2 +1,2 @@
-web: gunicorn appIV.wsgi --log-file -
+web: cd appIV && gunicorn formu:app
 
