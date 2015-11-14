@@ -29,34 +29,6 @@ class ComprobarEtiquetas(HTMLParser):
 		if tag=='html':
 			fin_html = 1
 
-class RegistrationForm(Form):
-	username = TextField('Nombre: ', [validators.Length(min=4, max=25)])
-	userap = TextField('Apellidos: ', [validators.Length(min=4, max=50)])
-	email = TextField('Correo electronico', [validators.Length(min=6, max=35),validators.Required(),validators.Email(message='El email es incorrecto')])
-	visaNum = TextField('Numero de VISA', [validators.Length(min=6, max=35),validators.Required(),validators.Regexp(regVISA, flags=0, message='Numero de VISA incorrecto')])
-	nacimiento = DateField('Fecha de nacimiento: ', format='%Y-%m-%d')
-	direccion = TextField('Direccion: ', [validators.Length(min=6, max=60)])
-	password = PasswordField('Contrasenia', [validators.Required(),validators.EqualTo('confirm', message='La contrasenia debe coincidir con la repeticion')])
-	confirm = PasswordField('Repite la contrasenia')
-	accept_tos = BooleanField('Acepto las condiciones', [validators.Required()])
-	formaPago = SelectField(u'Forma de pago', choices=[('contra', 'Contra reembolso'), ('visa', 'Tarjeta VISA')])
-
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-	form = RegistrationForm(request.form)
-	if request.method == 'POST' and form.validate():
-		return('Gracias %s por registrarte!' % form.username.data)
-	return render_template('register.html', form=form)
-
-@app.route('/users')
-def showUsers():
-	return 'Esta es la lista de usuarios registrados: ' + ',\n'.join(map(str,listUsers))
-
-@app.route('/add/<username>')
-def	addUser(username):
-	listUsers.append(username)
-	return 'Usuario registrado. Pruebe /users para ver los usuarios'
-
 @app.route('/')
 def index():
 	form = RegistrationForm(request.form)
