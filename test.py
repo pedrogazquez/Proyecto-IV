@@ -1,58 +1,49 @@
 import unittest
-from formu import register
+import os
+import formu
 from HTMLParser import HTMLParser
+import tempfile
+from html5lib.sanitizer import HTMLSanitizerMixin
 
-ini_html = 0
-fin_html = 0
-hay_css = 0
-hay_form = 0
-html_css = ""
+eti_html = 0
+img = 0
+
 class ComprobarEtiquetas(HTMLParser):
-	def handle_starttag(self, tag, attrs):
-		global ini_html
-		global hay_css
-		global hay_form
+    def handle_starttag(self, tag, attrs):
+		global eti_html
+		global img
 		if tag=='html':
-			ini_html = 1
-		for attr in attrs:
-			if (attr[0] == 'href' and attr[1] == '/static/style.css'):
-				hay_css = 1
-		for attr in attrs:
-			if (attr[0] == 'method' and attr[1] == 'post'):
-				hay_form = 1
-	def handle_endtag(self, tag):
-		global fin_html
-		if tag=='html':
-			fin_html = 1
-
-class TestStringMethods(unittest.TestCase):
+			eti_html = 1
+		if tag=='img':
+			img = 1
 	
-	def test_comprobarformu(self):
-		global hay_form
-		hay_form = 0
+class TestMethods(unittest.TestCase):
+	def setUp(self):
+		self.db_fd, formu.app.config['DATABASE'] = tempfile.mkstemp()
+		formu.app.config['TESTING'] = True
+        	self.app = formu.app.test_client()
+
+    	def tearDown(self):
+        	os.close(self.db_fd)
+        	os.unlink(formu.app.config['DATABASE'])
+		
+	def test_imagen(self):
+		global img
+		img = 0
 		parser = ComprobarEtiquetas()
-		html_registro=register()
-		parser.feed(html_registro)
-		self.assertEqual(hay_form,1)
-
-
-	# def test_comprobarHTML(self):
-		# global ini_html
-		# ini_html = 1
-		# parser = ComprobarEtiquetas()
-		# html_index = index()
-		# parser.feed(html_index)
-		# self.assertEqual(ini_html,1)
-
-	def test_comprobarCSS(self):
-		global hay_css
-		global html_css
-		hay_css = 1
+		archi_index= self.app.get('/')
+		assert 'img' in archi_index.data
+	
+	def test_htmlindex(self):
+		global eti_html
+		eti_html = 0
 		parser = ComprobarEtiquetas()
-		html_css=register()
-		parser.feed(html_css)
-		self.assertEqual(hay_form,1)
+		archi_index= self.app.get('/index.html')
+		assert 'html' in archi_index.data
 
+	def test_usuario(self):
+		valor = self.app.get('/add/pedro')
+		assert 'Usuario registrado. Pruebe /users para ver los usuarios' in valor.data
 
 if __name__ == '__main__':
     unittest.main()
