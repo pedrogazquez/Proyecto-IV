@@ -3,6 +3,8 @@ Pedro Gázquez Navarrete, repositorio creado para la realización del proyecto d
 
 [![Heroku](https://www.herokucdn.com/deploy/button.png)](https://warm-sands-2560.herokuapp.com/)
 
+[![Build Status](https://snap-ci.com/pedrogazquez/Proyecto-IV/branch/master/build_image)](https://snap-ci.com/pedrogazquez/Proyecto-IV/branch/master)
+
 [![Build Status](https://travis-ci.org/pedrogazquez/Proyecto-IV.svg?branch=master)](https://travis-ci.org/pedrogazquez/Proyecto-IV)
 
 ##Descripción##
