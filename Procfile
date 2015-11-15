@@ -1,2 +1,2 @@
-web: cd appIV && gunicorn formu:app
+web: python formu.py
 
