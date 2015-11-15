@@ -14,9 +14,21 @@ def	addUser(username):
 	listUsers.append(username)
 	return 'Usuario registrado. Pruebe /users para ver los usuarios'
 
-@app.route('/')
+@app.route('/index.html')
 def index():
 	return render_template('index.html')
+@app.route('/sobre.html')
+def sobre():
+	return render_template('sobre.html')
+@app.route('/productos.html')
+def produ():
+	return render_template('productos.html')
+@app.route('/servicios.html')
+def servi():
+	return render_template('servicios.html')
+@app.route('/contacto.html')
+def contac():
+	return render_template('contacto.html')
 	
 if __name__ == '__main__':
 	port = int(os.environ.get('PORT', 5000))

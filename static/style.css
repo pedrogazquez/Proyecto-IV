@@ -44,7 +44,7 @@ top:130px;
 
 #mainpic
 {
-background-image:url(images/main.jpg);
+background-image:url(../../images/main.jpg);
 background-repeat:no-repeat;
 width:900px;
 height:402px;	
@@ -63,7 +63,7 @@ color:#B1C6FC
 
 #menu
 {
-background-image:url(images/menu.png);
+background-image:url(../../images/menu.png);
 background-repeat:no-repeat;
 width:940px;
 height:69px;
@@ -126,7 +126,7 @@ color:#7198E1;
 
 #menu a:hover{
 	color:#BAD1F3;
-	background: url(images/menuhov.jpg) no-repeat;
+	background: url(../../images/menuhov.jpg) no-repeat;
 }
 
 #content p
