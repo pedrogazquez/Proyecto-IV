@@ -14,6 +14,10 @@ def	addUser(username):
 	listUsers.append(username)
 	return 'Usuario registrado. Pruebe /users para ver los usuarios'
 
+@app.route('/')
+def index1():
+        return render_template('index.html')
+
 @app.route('/index.html')
 def index():
 	return render_template('index.html')
