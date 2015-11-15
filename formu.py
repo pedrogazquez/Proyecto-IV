@@ -1,7 +1,5 @@
-from wtforms import *
 from flask import Flask, session, redirect, url_for, escape, request, render_template
-import sys, pydoc
-from HTMLParser import HTMLParser
+import sys, pydoc, os
 
 app = Flask(__name__)
 
