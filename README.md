@@ -1,9 +1,8 @@
 ## Proyecto Infraestructura Virtual##
 Pedro Gázquez Navarrete, repositorio creado para la realización del proyecto de Infraestructura Virtual el cual realizaré junto al de la asignatura DAI.
 
-[![Build Status](https://travis-ci.org/pedrogazquez/Proyecto-IV.svg?branch=master)](https://travis-ci.org/pedrogazquez/Proyecto-IV)
-
 [![Heroku](https://www.herokucdn.com/deploy/button.png)](https://warm-sands-2560.herokuapp.com/)
+[![Build Status](https://travis-ci.org/pedrogazquez/Proyecto-IV.svg?branch=master)](https://travis-ci.org/pedrogazquez/Proyecto-IV)
 
 ##Descripción##
 El proyecto ha realizar en esta asignatura será la de hacer la Infraestructura Virtual para el proyecto que voy a realizar en DAI ya que también tengo cursada esa asignatura. Este proyecto de DAI se realizará en el lenguaje de programación Python.
