@@ -36,3 +36,28 @@ He creado mi archivo [shippable.yml](https://github.com/pedrogazquez/Proyecto-IV
 #Travis
 Como he hecho con el anterior he creado mi archivo [travis.yml](https://github.com/pedrogazquez/Proyecto-IV/blob/master/.travis.yml), igual que antes registrado con github previamente. Una vez hecho estó como se puede ver en la siguiente imagen el resultado de los tests es positivo:
 ![travis](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/trav_zpshehbyrb0.png)
+
+## Hito Tres: Despliegue de mi aplicación en un PaaS/SaaS: Heroku
+
+He subido la aplicación a Heroku, [este es el enlace a ella](https://warm-sands-2560.herokuapp.com/). Para ello lo que he hecho ha sido, primero registrarme en heroku, después he clonado mi repositorio donde guardo la aplicación. Lo proximo que hay que hacer es teclear las siguientes órdenes en el terminal dentro del repositorio de nuestra aplicación que hemos clonado:
+```
+heroku create
+git push heroku master
+```
+Con heroku create, si no le indicamos nada, nos crea la app con un nombre aleatorio, que en mi caso ha sido [warm-sands-2560](https://warm-sands-2560.herokuapp.com/).
+Lo proximo que he hecho ha sido crear un proceso de integración contínua junto al despliegue automático tanto en Heroku como en Snap CI. Para realizarlo en heroku, al conectarlo con GitHub debes aceptar la siguiente ventana emergente:
+
+![heroku123](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-11-16%20005315_zpssvdmjoei.png)
+
+Una vez hecho esto, habilitamos que no despliegue hasta que no pase los tests para la IC:
+
+![ic](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-11-16%20005451_zpsca57kxdz.png)
+
+Como se puede ver en la imagen el proceso de intregración continua está correctamente configurado.
+Otra opción es hacerlo con Snap CI, en el cual debes conectarte con GitHub y aceptar las condiciones:
+
+![snap](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-11-16%20003846_zpspefwdnws.png)
+
+Y por último, podemos comprobar que también está correctamente configurado el proceso de IC con Snap CI:
+
+![snap1222](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-11-16%20004423_zpsqfhzcdku.png)
