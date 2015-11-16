@@ -18,7 +18,7 @@ Aquí adjunto la imagen de la inscripción realizada correctamente en el Certame
 ![Inscripción](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/InscripcionUGR_zpsgkjszv6h.png)
 
 
-## Segundo Hito
+## Integración Continua
 
 [![Build Status](https://travis-ci.org/pedrogazquez/Proyecto-IV.svg?branch=master)](https://travis-ci.org/pedrogazquez/Proyecto-IV)
 
@@ -36,7 +36,7 @@ He creado mi archivo [shippable.yml](https://github.com/pedrogazquez/Proyecto-IV
 Como he hecho con el anterior he creado mi archivo [travis.yml](https://github.com/pedrogazquez/Proyecto-IV/blob/master/.travis.yml), igual que antes registrado con github previamente. Una vez hecho estó como se puede ver en la siguiente imagen el resultado de los tests es positivo:
 ![travis](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/trav_zpshehbyrb0.png)
 
-## Hito Tres: Despliegue de mi aplicación en un PaaS/SaaS: Heroku
+## Despliegue de mi aplicación en un PaaS/SaaS: Heroku
 He añadido varias funcionalidades a mi app, como por ejemplo la definición de varias rutas en mi archivo python para la redirección de cada html integrando cada uno de ellos en un template diferente. Para desplegar mi app en Heroku, he tenido que definir mi archivo [Procfile](https://github.com/pedrogazquez/Proyecto-IV/blob/master/Procfile):
 ```
 web: python formu.py
