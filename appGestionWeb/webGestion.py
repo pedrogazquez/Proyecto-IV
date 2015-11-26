@@ -60,6 +60,20 @@ def verMongo():
 		salida = 'Nombre: '+(post['Nombre']) + '  Apellidos: '+(post['Apellidos']) +'  Email: '+ (post['Email'])
 	return "<html><body><h1>%s <a href='index.html'>Volver a Home</a></h1></body></html>" % (salida)
 
+@app.route('/')
+def raiz():
+	if'username' in session:
+		masvisitadas('/index.html')
+		nombrecillo = escape(session['username'])
+		if 'link1' in session:
+			lamas = escape(session['link1'])
+		if'link2' in session:
+			lamas2 = escape(session['link2'])
+		if'link3' in session:
+			lamas3 = escape(session['link3'])
+		return render_template('index.html', nombrecillo = escape(session['username']), lamas = escape(session['link1']), lamas2 = escape(session['link2']), lamas3 = escape(session['link3']))
+	return render_template('index.html')
+
 @app.route('/index.html')
 def index():
 	if'username' in session:
