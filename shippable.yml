@@ -10,4 +10,7 @@ install:
 
 # comando para ejecutar los test:
 script: 
-  - python test.py
+  - cd appGestionWeb && python test.py
+  
+notifications:
+  - email: false
