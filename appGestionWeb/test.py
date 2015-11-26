@@ -1,6 +1,6 @@
 import unittest
 import os
-import formu
+import webGestion
 from HTMLParser import HTMLParser
 import tempfile
 from html5lib.sanitizer import HTMLSanitizerMixin
@@ -19,31 +19,35 @@ class ComprobarEtiquetas(HTMLParser):
 	
 class TestMethods(unittest.TestCase):
 	def setUp(self):
-		self.db_fd, formu.app.config['DATABASE'] = tempfile.mkstemp()
-		formu.app.config['TESTING'] = True
-        	self.app = formu.app.test_client()
+		self.db_fd, webGestion.app.config['DATABASE'] = tempfile.mkstemp()
+		webGestion.app.config['TESTING'] = True
+        	self.app = webGestion.app.test_client()
 
     	def tearDown(self):
         	os.close(self.db_fd)
-        	os.unlink(formu.app.config['DATABASE'])
+        	os.unlink(webGestion.app.config['DATABASE'])
 		
 	def test_imagen(self):
 		global img
 		img = 0
 		parser = ComprobarEtiquetas()
-		archi_index= self.app.get('/')
-		assert 'img' in archi_index.data
+		archi_index= self.app.get('/index.html')
+		assert 'html' in archi_index.data
 	
 	def test_htmlindex(self):
 		global eti_html
 		eti_html = 0
 		parser = ComprobarEtiquetas()
 		archi_index= self.app.get('/index.html')
-		assert 'html' in archi_index.data
+		assert 'div' in archi_index.data
 
 	def test_usuario(self):
-		valor = self.app.get('/add/pedro')
-		assert 'Usuario registrado. Pruebe /users para ver los usuarios' in valor.data
+		global img
+		img = 0
+		parser = ComprobarEtiquetas()
+		archi_index= self.app.get('/index.html')
+		assert 'h1' in archi_index.data
 
 if __name__ == '__main__':
     unittest.main()
+
