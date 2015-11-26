@@ -37,28 +37,8 @@ Como he hecho con el anterior he creado mi archivo [travis.yml](https://github.c
 ![travis](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/trav_zpshehbyrb0.png)
 
 ## Despliegue de mi aplicación en un PaaS/SaaS: Heroku
-He añadido varias funcionalidades a mi app, como por ejemplo la definición de varias rutas en mi archivo python para la redirección de cada html integrando cada uno de ellos en un template diferente. Para desplegar mi app en Heroku, he tenido que definir mi archivo [Procfile](https://github.com/pedrogazquez/Proyecto-IV/blob/master/Procfile):
-```
-web: python formu.py
-```
-y el que ya tenía que también es necesario de [requirements.txt](https://github.com/pedrogazquez/Proyecto-IV/blob/master/requirements.txt):
-```
-Flask==0.10.1
-gunicorn==19.3.0
-html5lib==0.999
-itsdangerous==0.24
-Jinja2==2.8
-MarkupSafe==0.23
-requests==2.2.1
-six==1.5.2
-ssh-import-id==3.21
-urllib3==1.7.1
-virtualenv==13.1.2
-Werkzeug==0.10.4
-WTForms==2.0.2
-wheel==0.24.0
-yolk==0.4.3
-```
+He añadido varias funcionalidades a mi app, como por ejemplo la definición de varias rutas en mi archivo python para la redirección de cada html integrando cada uno de ellos en un template diferente. Para desplegar mi app en Heroku, he tenido que definir mi archivo [Procfile](https://github.com/pedrogazquez/Proyecto-IV/blob/master/Procfile) y el que ya tenía que también es necesario de [requirements.txt](https://github.com/pedrogazquez/Proyecto-IV/blob/master/requirements.txt):
+
 He subido la aplicación a Heroku, [este es el enlace a ella](https://warm-sands-2560.herokuapp.com/). Para ello lo que he hecho ha sido, primero registrarme en heroku, después he clonado mi repositorio donde guardo la aplicación. Lo proximo que hay que hacer es teclear las siguientes órdenes en el terminal dentro del repositorio de nuestra aplicación que hemos clonado:
 ```
 heroku create
