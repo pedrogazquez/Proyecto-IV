@@ -7,7 +7,6 @@ from html5lib.sanitizer import HTMLSanitizerMixin
 
 eti_html = 0
 img = 0
-fin_html = 0
 
 class ComprobarEtiquetas(HTMLParser):
     def handle_starttag(self, tag, attrs):
