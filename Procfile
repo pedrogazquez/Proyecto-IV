@@ -1,2 +1,2 @@
-web: python formu.py
+web: cd appGestionWeb && python webGestion.py
 
