@@ -4,7 +4,6 @@ from wtforms import *
 from flask import Flask, session, redirect, url_for, escape, request, render_template
 import sys, pydoc, datetime
 from HTMLParser import HTMLParser
-import dbm
 from pymongo import MongoClient
 
 reload(sys)
