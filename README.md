@@ -31,7 +31,7 @@ He creado mi archivo [shippable.yml](https://github.com/pedrogazquez/Proyecto-IV
 Como he hecho con el anterior he creado mi archivo [travis.yml](https://github.com/pedrogazquez/Proyecto-IV/blob/master/.travis.yml), igual que antes registrado con github previamente. Una vez hecho estó como se puede ver en la siguiente imagen el resultado de los tests es positivo:
 ![travis](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/trav_zpshehbyrb0.png)
 
-## Despliegue de mi aplicación en un PaaS/SaaS: Heroku
+# Despliegue de mi aplicación en un PaaS/SaaS: Heroku
 He añadido varias funcionalidades a mi app, como base de datos con Mongo, formularios, sesiones para cada usuriao y varios templates distintos. Para desplegar mi app en Heroku, he tenido que definir mi archivo [Procfile](https://github.com/pedrogazquez/Proyecto-IV/blob/master/Procfile) y el que ya tenía que también es necesario de [requirements.txt](https://github.com/pedrogazquez/Proyecto-IV/blob/master/requirements.txt):
 
 He subido la aplicación a Heroku, [la he llamado webgestion](https://webgestion.herokuapp.com/). Para ello lo que he hecho ha sido, primero registrarme en heroku, después he clonado mi repositorio donde guardo la aplicación. Lo proximo que hay que hacer es teclear las siguientes órdenes en el terminal dentro del repositorio de nuestra aplicación que hemos clonado:
