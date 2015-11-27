@@ -5,6 +5,7 @@ from flask import Flask, session, redirect, url_for, escape, request, render_tem
 import sys, pydoc, datetime
 from HTMLParser import HTMLParser
 from pymongo import MongoClient
+import os
 
 reload(sys)
 sys.setdefaultencoding("utf-8")
