@@ -1,7 +1,7 @@
 ## Proyecto Infraestructura Virtual##
 Pedro Gázquez Navarrete, repositorio creado para la realización del proyecto de Infraestructura Virtual el cual realizaré junto al de la asignatura DAI.
 
-[![Heroku](https://www.herokucdn.com/deploy/button.png)](https://warm-sands-2560.herokuapp.com/)
+[![Heroku](https://www.herokucdn.com/deploy/button.png)](https://webgestion.herokuapp.com/)
 
 [![Build Status](https://snap-ci.com/pedrogazquez/Proyecto-IV/branch/master/build_image)](https://snap-ci.com/pedrogazquez/Proyecto-IV/branch/master)
 
@@ -37,9 +37,9 @@ Como he hecho con el anterior he creado mi archivo [travis.yml](https://github.c
 ![travis](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/trav_zpshehbyrb0.png)
 
 ## Despliegue de mi aplicación en un PaaS/SaaS: Heroku
-He añadido varias funcionalidades a mi app, como por ejemplo la definición de varias rutas en mi archivo python para la redirección de cada html integrando cada uno de ellos en un template diferente. Para desplegar mi app en Heroku, he tenido que definir mi archivo [Procfile](https://github.com/pedrogazquez/Proyecto-IV/blob/master/Procfile) y el que ya tenía que también es necesario de [requirements.txt](https://github.com/pedrogazquez/Proyecto-IV/blob/master/requirements.txt):
+He añadido varias funcionalidades a mi app, como base de datos con Mongo, formularios, sesiones para cada usuriao y varios templates distintos. Para desplegar mi app en Heroku, he tenido que definir mi archivo [Procfile](https://github.com/pedrogazquez/Proyecto-IV/blob/master/Procfile) y el que ya tenía que también es necesario de [requirements.txt](https://github.com/pedrogazquez/Proyecto-IV/blob/master/requirements.txt):
 
-He subido la aplicación a Heroku, [este es el enlace a ella](https://warm-sands-2560.herokuapp.com/). Para ello lo que he hecho ha sido, primero registrarme en heroku, después he clonado mi repositorio donde guardo la aplicación. Lo proximo que hay que hacer es teclear las siguientes órdenes en el terminal dentro del repositorio de nuestra aplicación que hemos clonado:
+He subido la aplicación a Heroku, [la he llamado webgestion](https://webgestion.herokuapp.com/). Para ello lo que he hecho ha sido, primero registrarme en heroku, después he clonado mi repositorio donde guardo la aplicación. Lo proximo que hay que hacer es teclear las siguientes órdenes en el terminal dentro del repositorio de nuestra aplicación que hemos clonado:
 ```
 heroku create
 git push heroku master
