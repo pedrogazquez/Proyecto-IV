@@ -4,4 +4,4 @@ python:
 sudo: required
 install: "make install"
 #Script
-script: make test
+#script: make test
