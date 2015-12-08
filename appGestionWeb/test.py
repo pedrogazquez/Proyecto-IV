@@ -1,6 +1,6 @@
 import unittest
 import os
-import webGestion
+from webGestion import *
 from HTMLParser import HTMLParser
 import tempfile
 from html5lib.sanitizer import HTMLSanitizerMixin
