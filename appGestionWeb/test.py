@@ -1,9 +1,10 @@
 import unittest
 import os
-from webGestion import *
+import webGestion
 from HTMLParser import HTMLParser
 import tempfile
 from html5lib.sanitizer import HTMLSanitizerMixin
+
 
 eti_html = 0
 img = 0
