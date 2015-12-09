@@ -1,4 +1,4 @@
-FROM debian
+FROM ubuntu
 
 #Autor
 MAINTAINER Pedro Gazquez Navarrete <pedrogazqueznavarrete@gmail.com>
