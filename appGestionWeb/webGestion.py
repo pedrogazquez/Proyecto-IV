@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 
-from wtforms import *
+from wtforms import Form, BooleanField, TextField, PasswordField, validators *
 from flask import Flask, session, redirect, url_for, escape, request, render_template
 import sys, pydoc, datetime
 from HTMLParser import HTMLParser
