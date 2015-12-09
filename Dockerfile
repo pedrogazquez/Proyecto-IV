@@ -3,6 +3,7 @@ FROM debian
 #Autor
 MAINTAINER Pedro Gazquez Navarrete <pedrogazqueznavarrete@gmail.com>
 
+RUN apt-get install sudo
 RUN sudo apt-get -y update
 RUN sudo apt-get install -y git
 RUN sudo apt-get install -y build-essential
