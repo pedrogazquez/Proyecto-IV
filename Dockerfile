@@ -1,12 +1,19 @@
-FROM ubuntu
+FROM ubuntu:latest
 
 #Autor
 MAINTAINER Pedro Gazquez Navarrete <pedrogazqueznavarrete@gmail.com>
 
-RUN apt-get install sudo
+
 RUN sudo apt-get -y update
 RUN sudo apt-get install -y git
-RUN sudo apt-get install -y build-essential
 RUN git clone https://github.com/pedrogazquez/Proyecto-IV.git
-RUN cd Proyecto-IV && git pull
+
+RUN sudo apt-get install -y python-setuptools
+RUN sudo apt-get -y install python-dev
+RUN sudo apt-get -y install build-essential
+RUN sudo apt-get -y install python-psycopg2
+RUN sudo apt-get -y install libpq-dev
+RUN sudo easy_install pip
+RUN sudo pip install --upgrade pip
+
 RUN cd Proyecto-IV && make install
