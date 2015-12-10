@@ -13,6 +13,6 @@ run:
 	
 docker: 
 	sudo apt-get update
- 	sudo apt-get install -y docker.io
- 	sudo docker pull pedrogazquez/proyecto-iv
+	sudo apt-get install -y docker.io
+	sudo docker pull pedrogazquez/proyecto-iv
 	sudo docker run -t -i pedrogazquez/proyecto-iv /bin/bash
