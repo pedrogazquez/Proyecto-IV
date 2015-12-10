@@ -12,7 +12,7 @@ RUN git clone https://github.com/pedrogazquez/Proyecto-IV.git
 
 #Instalar python
 RUN sudo apt-get install -y python-setuptools
-RUN sudo apt-get -y install build-dep python-imaging --fix-missing
+RUN sudo apt-get -y install build-dep python-imaging
 RUN sudo apt-get -y install python-dev
 RUN sudo apt-get -y install build-essential
 RUN sudo apt-get -y install python-psycopg2
