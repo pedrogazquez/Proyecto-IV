@@ -8,6 +8,7 @@ RUN sudo apt-get -y update
 RUN sudo apt-get install -y git
 RUN git clone https://github.com/pedrogazquez/Proyecto-IV.git
 
+RUN sudo apt-get install libpython2.7-dev
 RUN sudo apt-get install -y python-setuptools
 RUN sudo apt-get -y install python-dev
 RUN sudo apt-get -y install build-essential
