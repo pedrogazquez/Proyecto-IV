@@ -90,6 +90,11 @@ RUN sudo pip install --upgrade pip
 RUN cd Proyecto-IV && make install
 ```
 He tenido un problema con la criptografía de python y tras mucho buscar e indagar lo he solucionado instalando el paquete **libffi-dev**.
+
+Luego me he registrado en la web de [hub.docker](https://hub.docker.com/) y he autorizado a la aplicación para que se conecte a GitHub para así conectar el repositorio de mi proyecto para crear la imagen:
+
+![imgAutoriza](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-12-05%20135317_zpsjamrchxm.png)
+
 [Aqui esta mi imagen de docker](https://hub.docker.com/r/pedrogazquez/proyecto-iv/) y en la siguiente captura muestro la construcción automática de esta creando un "Automated Build" sobre el repositorio de mi proyecto de GitHub:
 
 ![DockerHub](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-12-10%20133939_zpsxdwwnyfs.png)
