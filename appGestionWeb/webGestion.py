@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 
-from wtforms import Form, BooleanField, TextField, PasswordField, validators
+from wtforms import *
 from flask import Flask, session, redirect, url_for, escape, request, render_template
 import sys, pydoc, datetime
 from HTMLParser import HTMLParser
@@ -156,5 +156,5 @@ app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 
 if __name__ == '__main__':
 	# Bind to PORT if defined, otherwise default to 5000.
-	port = int(os.environ.get('PORT', 5000))
+	port = int(os.environ.get('PORT', 2222))
 	app.run(host='0.0.0.0', port=port)
