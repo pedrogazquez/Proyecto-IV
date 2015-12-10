@@ -2,7 +2,11 @@ language: python
 python:
   - "2.7"
 sudo: required
+env:
+  global:
+    - WTFORMS="<2.1"
 install: 
+  - pip install WTForms
   - make install
 
 script: 
