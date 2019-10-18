@@ -1,4 +1,4 @@
-Flask==0.10.1
+Flask==1.0
 gunicorn==19.3.0
 html5lib==0.999
 itsdangerous==0.24
