@@ -10,7 +10,7 @@ pyOpenSSL==0.14
 requests==2.2.1
 six==1.5.2
 ssh-import-id==3.21
-urllib3==1.7.1
+urllib3==1.24.2
 virtualenv==13.1.2
 Werkzeug==0.10.4
 WTForms==2.0.1
