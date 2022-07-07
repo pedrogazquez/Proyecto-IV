@@ -7,7 +7,7 @@ MarkupSafe==0.23
 pyinotify==0.9.4
 pymongo==3.1.1
 pyOpenSSL==0.14
-requests==2.2.1
+requests==2.20.0
 six==1.5.2
 ssh-import-id==3.21
 urllib3==1.7.1
